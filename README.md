@@ -34,7 +34,6 @@ Use the `n8n.sh` script to control your local n8n environment:
 
 ---
 
-<br/>
 
 ## 🪜 Example
 Auto post on facebook - https://www.youtube.com/watch?v=UVpRiNpyE08
