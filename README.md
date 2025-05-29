@@ -34,6 +34,17 @@ Use the `n8n.sh` script to control your local n8n environment:
 
 ---
 
+## 🗃️ Dump and Restore database
+ 
+```
+# 💾 Dump database
+pg_dump -U postgres n8n > n8n.sql
+
+# 🔄 Restore
+pg_restore -U postgres -d n8n n8n.sql
+
+```
+
 
 ## ⚠️ Update the the volume
 
