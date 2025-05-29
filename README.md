@@ -35,5 +35,11 @@ Use the `n8n.sh` script to control your local n8n environment:
 ---
 
 
+## ⚠️ Update the the volume
+
+Configure the mounted volume /home/node/ to local path
+
+
+
 ## 🪜 Example
 Auto post on facebook - https://www.youtube.com/watch?v=UVpRiNpyE08
