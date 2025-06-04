@@ -30,6 +30,7 @@ services:
       DB_POSTGRESDB_SCHEMA: ${DB_POSTGRESDB_SCHEMA}
       N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS: ${N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS}
       TZ: ${TZ}
+    shm_size: 2g
     volumes:
       - n8n_data:/home/node/.n8n
       - /Users/arnon/vokmon/study/n8n/files:/home/node/

@@ -5,6 +5,7 @@
 #   ./n8n.sh up
 #   ./n8n.sh down
 #   ./n8n.sh down -v
+#   ./n8n.sh rebuild
 #   ./n8n.sh help
 #
 
@@ -20,10 +21,10 @@ print_help() {
   echo "  up              Start n8n stack (detached mode)"
   echo "  down            Stop and remove containers"
   echo "  down -v         Stop and remove containers and volumes"
+  echo "  rebuild         Rebuild image without cache and restart stack"
   echo "  help            Show this help message"
   echo ""
 }
-
 
 # Load environment variables
 if [[ -f "$ENV_FILE" ]]; then
@@ -46,6 +47,11 @@ case "$1" in
       echo "🛑 Stopping and removing containers in $WORKDIR ..."
       docker compose -f "$COMPOSE_FILE" down
     fi
+    ;;
+  rebuild)
+    echo "🔧 Rebuilding n8n image without cache in $WORKDIR ..."
+    docker compose -f "$COMPOSE_FILE" build --no-cache
+    docker compose -f "$COMPOSE_FILE" up -d --force-recreate
     ;;
   help|--help|-h|"")
     print_help
